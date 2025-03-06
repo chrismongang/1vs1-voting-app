@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { getPlayers, validateToken, voteForPlayer } from "@/lib/actions"
-import type { Player } from "@/lib/definitions"
+import type { Player } from "@/lib/definitions.ts"
 import Image from "next/image"
 
 export default function VotePage() {
