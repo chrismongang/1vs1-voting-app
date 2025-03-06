@@ -1,5 +1,41 @@
 {
   "pages": {
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/1vs1-events/voting/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/1vs1-events/voting/page.js"
+    ],
+    "/1vs1-events/voting/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/1vs1-events/voting/loading.js"
+    ],
+    "/1vs1-events/voting/vote/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/1vs1-events/voting/vote/page.js"
+    ],
+    "/1vs1-events/voting/vote/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/1vs1-events/voting/vote/loading.js"
+    ],
+    "/1vs1-events/voting/results/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/1vs1-events/voting/results/page.js"
+    ],
+    "/1vs1-events/voting/results/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/1vs1-events/voting/results/loading.js"
+    ],
     "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

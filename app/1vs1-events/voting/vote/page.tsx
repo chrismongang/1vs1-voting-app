@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { getPlayers, validateToken, voteForPlayer } from "@/lib/actions"
-import type { Player } from "@/lib/definitions.ts"
+import type { Player } from "@/lib/definitions"
 import Image from "next/image"
 
 export default function VotePage() {
@@ -25,6 +25,12 @@ export default function VotePage() {
 
     async function initialize() {
       try {
+        if (!token) {
+          setError("Kein Token vorhanden")
+          setLoading(false)
+          return
+        }
+
         const { valid, user, error } = await validateToken(token)
 
         if (!valid || !user) {
@@ -53,7 +59,7 @@ export default function VotePage() {
 
   // Frühe Rückgabe, wenn kein Token vorhanden ist.  This prevents conditional hook calls.
   if (!token) {
-    return null;
+    return null
   }
 
   async function handleVote(playerId: string) {
@@ -100,3 +106,4 @@ export default function VotePage() {
     </div>
   )
 }
+

@@ -83,3 +83,58 @@ export async function voteForPlayer(userId: string, playerId: string): Promise<{
   }
 }
 
+// Funktion zum Abrufen eines Spielers anhand seiner ID
+export async function getPlayerById(playerId: string): Promise<Player> {
+  const { data, error } = await supabase.from("players").select("*").eq("id", playerId).single()
+
+  if (error) {
+    throw new Error(error.message)
+  }
+
+  return data as Player
+}
+
+// Funktion zum Aktualisieren eines Spielers
+export async function updatePlayer(
+  playerId: string,
+  updates: {
+    name?: string
+    player_number?: number
+    image_url?: string | null
+  },
+): Promise<Player> {
+  const { data, error } = await supabase.from("players").update(updates).eq("id", playerId).select().single()
+
+  if (error) {
+    throw new Error(error.message)
+  }
+
+  return data as Player
+}
+
+// Funktion zum Erstellen eines neuen Spielers
+export async function createPlayer(playerData: {
+  name: string
+  player_number: number
+  image_url?: string | null
+}): Promise<Player> {
+  const { data, error } = await supabase.from("players").insert([playerData]).select().single()
+
+  if (error) {
+    throw new Error(error.message)
+  }
+
+  return data as Player
+}
+
+// Funktion zum Löschen eines Spielers
+export async function deletePlayer(playerId: string): Promise<boolean> {
+  const { error } = await supabase.from("players").delete().eq("id", playerId)
+
+  if (error) {
+    throw new Error(error.message)
+  }
+
+  return true
+}
+

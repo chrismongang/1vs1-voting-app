@@ -1,3 +1,5 @@
 {
-  "/not-found": "app/not-found.js"
+  "/not-found": "app/not-found.js",
+  "/1vs1-events/voting/page": "app/1vs1-events/voting/page.js",
+  "/1vs1-events/voting/vote/page": "app/1vs1-events/voting/vote/page.js"
 }
